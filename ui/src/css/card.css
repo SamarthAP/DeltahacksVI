@@ -14,13 +14,10 @@
 
 .card-title {
     text-align: center;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 25px;
-}
-
-.card-btn {
-    background-color: darkgrey;
-    margin-right: 1em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    padding-top: 0.5em;
 }
 
 .card-data {
@@ -34,7 +31,15 @@
     list-style-type: none;
 }
 
+.card-list li {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    padding-bottom: 1%;
+}
+
 .card-icon {
-    height: 40px;
+    height: 50px;
     width: auto;
+    margin-right: 2em;
+    padding-bottom: 50%;
 }

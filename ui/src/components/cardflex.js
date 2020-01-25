@@ -6,11 +6,13 @@ var cardData = [
     {
         id: "Session 1",
         date: "Jan 31, 2020",
-        nQuestions: "10"
+        nQuestions: "10",
+        time: "10min"
     },{
         id: "Session 2",
         date: "Feb 1, 2020",
-        nQuestions: "2"
+        nQuestions: "2",
+        time: "15min"
     }
 ]
 

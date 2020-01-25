@@ -19,7 +19,7 @@ export default class Card extends React.Component {
 
     render(){
         return (
-            <div className="card">
+            <div id="ii" className="card">
                 <div className="card-title">
                     {this.props.data.id}
                 </div>
@@ -28,12 +28,11 @@ export default class Card extends React.Component {
                         <ul className="card-list">
                             <li><strong>Complete by: </strong>{this.props.data.date}</li>
                             <li><strong>Number of Questions: </strong>{this.props.data.nQuestions}</li>
+                            <li><strong>Estimated Completion Time: </strong>{this.props.data.time}</li>
                         </ul>
                     </div>
                     <div>
-                        <button onClick={() => this.onButton(this.props.data.id)} className="card-btn">
-                            <img  className="card-icon" src={this.state.data.imgSrc} />   
-                        </button>
+                        <img onClick={() => this.onButton(this.props.data.id)} className="card-icon" src={this.state.data.imgSrc} />   
                     </div>
                 </div>
             </div>
