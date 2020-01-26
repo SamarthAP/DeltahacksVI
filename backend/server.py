@@ -1,5 +1,6 @@
-from flask import Flask, escape, request 
+from flask import Flask, escape, request
 from flask_cors import CORS
+import json
 
 import numpy as np
 import keras
@@ -82,4 +83,4 @@ def analyze_video():
 
     print(arr)
 
-    return arr
+    return json.dumps(arr)
