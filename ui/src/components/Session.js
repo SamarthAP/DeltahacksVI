@@ -1,17 +1,12 @@
 import React from 'react';
 import Question from './Question';
+import { Link } from 'react-router-dom';
 import '../css/Session.css'
 
 var appData = require('../appData.json').data;
 
 export default class Session extends React.Component {
 
-    /**
-     * 
-     * session title
-     * list of questions 
-     * 
-     */
     constructor(props) {
         super(props);
     }
@@ -45,9 +40,13 @@ export default class Session extends React.Component {
 
     render() {
         return (
-            <div className="sess">
-                {this.handleData()}
+            <div>
+                <Link to="/"><div className="q-back">Back</div></Link>
+                <div className="sess">
+                    {this.handleData()}
+                </div>
             </div>
+            
         )
     }
 }
