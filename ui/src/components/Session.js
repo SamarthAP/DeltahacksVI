@@ -9,6 +9,12 @@ var data = [
     },{
         title: "Question 2",
         question: "How does heejeebeejees make you feel?"
+    },{
+        title: "Question 3",
+        question: "How does peepee make you feel?"
+    },{
+        title: "Question 4",
+        question: "How does booboo make you feel?"
     }
 ]
 

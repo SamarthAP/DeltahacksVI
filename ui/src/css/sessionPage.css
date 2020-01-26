@@ -1,0 +1,15 @@
+.sessionStyle {
+    float: right;
+    position: absolute;
+    top: 275px;
+    z-index: 2;
+    width: 52.5vw;
+    justify-content: center;
+    align-self: center;
+}
+
+.frontContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
