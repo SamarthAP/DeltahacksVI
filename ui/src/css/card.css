@@ -7,17 +7,18 @@
 .card {
     max-height: 20vw;
     width: 80vw;
-    border: 1px solid black;
-    background-color: darkgray;
+    border: 5px solid #292F36;
+    background-color: white;
     margin-bottom: 1em;
 }
 
 .card-title {
     text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana;
     font-size: 32px;
-    font-weight: 500;
+    font-weight: bold;
     padding-top: 0.5em;
+    color: #292F36;
 }
 
 .card-data {
@@ -32,7 +33,7 @@
 }
 
 .card-list li {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana;
     font-size: 14px;
     padding-bottom: 1%;
 }

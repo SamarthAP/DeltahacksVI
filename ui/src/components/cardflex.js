@@ -13,7 +13,18 @@ var cardData = [
         date: "Feb 1, 2020",
         nQuestions: "2",
         time: "15min"
+    },{
+        id: "Session 1",
+        date: "Jan 31, 2020",
+        nQuestions: "10",
+        time: "10min"
+    },{
+        id: "Session 1",
+        date: "Jan 31, 2020",
+        nQuestions: "10",
+        time: "10min"
     }
+    
 ]
 
 export default class CardFlex extends React.Component {

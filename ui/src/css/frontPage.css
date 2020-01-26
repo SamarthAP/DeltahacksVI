@@ -1,0 +1,30 @@
+.titleBanner {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    right: 0;
+    z-index: 3;
+}
+
+.frontContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.listTitle {
+    position: absolute;
+    top: 50px;
+    font: 20px Verdana;
+    font-weight: bolder;
+}
+
+.cardf {
+    float: right;
+    position: absolute;
+    top: 200px;
+    z-index: 2;
+    width: 80vw;
+    justify-content: center;
+    align-self: center;
+}
