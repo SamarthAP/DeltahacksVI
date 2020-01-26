@@ -1,7 +1,7 @@
 import React from 'react';
 import {Doughnut} from 'react-chartjs-2';
-import EmotionChart from './donut';
 import '../css/VideoRecorder.css';
+import firebase from 'firebase';
 
 const videoType = 'video/webm';
 
@@ -47,6 +47,11 @@ class VideoRecorder extends React.Component {
         this.saveVideo = this.saveVideo.bind(this)
         this.blobToBase64 = this.blobToBase64.bind(this)
         this.formatDataset = this.formatDataset.bind(this)
+
+        //console.log(firebase.apps[0].firebase_.Reference)
+        this.emotions = firebase.apps[0].firebase_.database().ref().child('/emotions');
+
+
     }
 
     async componentDidMount() {
@@ -70,6 +75,95 @@ class VideoRecorder extends React.Component {
                 this.chunks.push(e.data)
             }
         }
+
+        this.emotions.on('value', res => {
+            for (var key in res.val()) {
+                for(var key2 in res.val()[key]){
+                    console.log(key2)
+                    if (key2 == this.props.session + "-" + this.props.question) {
+                            let numAngry = res.val()[key][key2].filter(x => x == 0).length;
+                            let numDisgust = res.val()[key][key2].filter(x => x == 1).length;
+                            let numFear = res.val()[key][key2].filter(x => x == 2).length;
+                            let numHappy = res.val()[key][key2].filter(x => x == 3).length;
+                            let numNeutral = res.val()[key][key2].filter(x => x == 4).length;
+                            let numSad = res.val()[key][key2].filter(x => x == 5).length;
+                            let numSurprise = res.val()[key][key2].filter(x => x == 6).length;
+                            
+                            console.log("dfsdfadsfds")
+                            console.log(numAngry)
+                            this.setState({ 
+                                dataset: {
+                                    labels: [
+                                        'Angry',
+                                        'Disgust',
+                                        'Fear',
+                                        'Happy',
+                                        'Neutral',
+                                        'Sad',
+                                        'Surprise'
+                                    ],
+                                    datasets: [{
+                                        data: [numAngry, numDisgust, numFear, numHappy, numNeutral, numSad, numSurprise],
+                                        backgroundColor: [
+                                            '#DC0A73',
+                                            '#F1CAC5',
+                                            '#5E4866',
+                                            '#C88CEF',
+                                            '#B0B5E8',
+                                            '#AE9EB3',
+                                            '#F57359'
+                                        ]
+                                    }]
+                                } 
+                            })  
+                            const a = res.val()
+                            console.log(typeof(res.val()[key][key2]))
+                            console.log(a)
+                            break
+                    }
+                }
+                //if(res.val()[key][0] == this.props.session + "-" + i.question == this.props.question)
+            }
+            // for(var i in res.val){
+            //     if(this.props.session + "-" + i.question == this.props.question){
+            //         let numAngry = i.emotions.filter(x => x == 0).length;
+            //         let numDisgust = i.emotions.filter(x => x == 1).length;
+            //         let numFear = i.emotions.filter(x => x == 2).length;
+            //         let numHappy = i.emotions.filter(x => x == 3).length;
+            //         let numNeutral = i.emotions.filter(x => x == 4).length;
+            //         let numSad = i.emotions.filter(x => x == 5).length;
+            //         let numSurprise = i.emotions.filter(x => x == 6).length;
+                    
+            //         this.setState({ 
+            //             dataset: {
+            //                 labels: [
+            //                     'Angry',
+            //                     'Disgust',
+            //                     'Fear',
+            //                     'Happy',
+            //                     'Neutral',
+            //                     'Sad',
+            //                     'Surprise'
+            //                 ],
+            //                 datasets: [{
+            //                     data: [numAngry, numDisgust, numFear, numHappy, numNeutral, numSad, numSurprise],
+            //                     backgroundColor: [
+            //                         '#DC0A73',
+            //                         '#F1CAC5',
+            //                         '#5E4866',
+            //                         '#C88CEF',
+            //                         '#B0B5E8',
+            //                         '#AE9EB3',
+            //                         '#F57359'
+            //                     ]
+            //                 }]
+            //             } 
+            //         })        
+            //     }
+            // }
+
+            
+        });
     }
 
     startRecording(e) {
@@ -120,6 +214,8 @@ class VideoRecorder extends React.Component {
         })
 
     }
+
+
 
     formatDataset(res) {
         let numAngry = res.filter(x => x == 0).length;
