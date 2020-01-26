@@ -1,11 +1,10 @@
 .banner {
-    background-color: #292F36;
-    text-decoration: underline;
-    text-decoration-color: #f7eee2;
-    color: #FF6B6B;
+    color: rgb(255, 107, 107);
     text-align: center;
     padding: 70px;
-    font: 50px Verdana;
+    font-size: 50px;
     font-weight: bold;
+    text-decoration: overline;
+    text-decoration-color: rgb(255, 250, 221);
     /*styles*/
 }
