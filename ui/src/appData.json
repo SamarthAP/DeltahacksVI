@@ -8,13 +8,13 @@
             "questions": [
                 {
                     "id": 1,
-                    "question": "What is the problem from your veiwpoint?"
+                    "question": "What is your name? Tell me a little about yourself :)"
                 },{
                     "id": 2,
-                    "question": "How does this problem tylically make you feel?"
+                    "question": "What are your hobbies?"
                 },{
                     "id": 3,
-                    "question": "What makes the problem better?"
+                    "question": "Tell me a little about your family."
                 }
             ]
         },{   
@@ -25,7 +25,7 @@
             "questions": [
                 {
                     "id": 1,
-                    "question": "Overall, how would you descibe your mood?"
+                    "question": "How would you descibe your mood right now?"
                 },{
                     "id": 2,
                     "question": "What makes you happy?"
@@ -39,7 +39,7 @@
             "questions": [
                 {
                     "id": 1,
-                    "question": "What prompted you to seek therapy now?"
+                    "question": "What are some of your favourite memories?"
                 },{
                     "id": 2,
                     "question": "Have you ever done therapy before?"
