@@ -8,13 +8,13 @@
             "questions": [
                 {
                     "id": 1,
-                    "question": "How wet is ur pu$$y"
+                    "question": "What is the problem from your veiwpoint?"
                 },{
                     "id": 2,
-                    "question": "how deep is ur love"
+                    "question": "How does this problem tylically make you feel?"
                 },{
                     "id": 3,
-                    "question": "dont u want me baby"
+                    "question": "What makes the problem better?"
                 }
             ]
         },{   
@@ -25,10 +25,10 @@
             "questions": [
                 {
                     "id": 1,
-                    "question": "how much is ram's perm"
+                    "question": "Overall, how would you descibe your mood?"
                 },{
                     "id": 2,
-                    "question": "how many goldfish can dwip fit in his mouth"
+                    "question": "What makes you happy?"
                 }
             ]
         },{   
@@ -39,16 +39,16 @@
             "questions": [
                 {
                     "id": 1,
-                    "question": "hello"
+                    "question": "What prompted you to seek therapy now?"
                 },{
                     "id": 2,
-                    "question": "its"
+                    "question": "Have you ever done therapy before?"
                 },{
                     "id": 3,
-                    "question": "me"
+                    "question": "What was it like growing up?"
                 },{
                     "id": 4,
-                    "question": "baby"
+                    "question": "How connected do you feel with the people around you?"
                 }
             ]
         },{   
@@ -59,13 +59,13 @@
             "questions": [
                 {
                     "id": 1,
-                    "question": "How wet is ur pu$$y"
+                    "question": "When did this problem start?"
                 },{
                     "id": 2,
-                    "question": "how deep is ur love"
+                    "question": "What are you doing about it?"
                 },{
                     "id": 3,
-                    "question": "dont u want me baby"
+                    "question": "How does it make you feel?"
                 }    
             ]
         }
