@@ -1,7 +1,11 @@
 import React from 'react';
+import {Doughnut} from 'react-chartjs-2';
+import EmotionChart from './donut';
 import '../css/VideoRecorder.css';
 
 const videoType = 'video/webm';
+
+//const ds = [0,2,1,3,4,3,5,6,0,0,3,3,3,3,4,2,1,2]
 
 class VideoRecorder extends React.Component {
 
@@ -15,6 +19,29 @@ class VideoRecorder extends React.Component {
 
         this.state = {
             recording: false,
+            dataset: {
+                labels: [
+                    'Angry',
+                    'Disgust',
+                    'Fear',
+                    'Happy',
+                    'Neutral',
+                    'Sad',
+                    'Surprise'
+                ],
+                datasets: [{
+                    data: [1, 1, 1, 1, 1, 1, 1],
+                    backgroundColor: [
+                        '#DC0A73',
+                        '#F1CAC5',
+                        '#5E4866',
+                        '#C88CEF',
+                        '#B0B5E8',
+                        '#AE9EB3',
+                        '#F57359'
+                    ]
+                }]
+            }
         }
 
         this.saveVideo = this.saveVideo.bind(this)
@@ -85,10 +112,50 @@ class VideoRecorder extends React.Component {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(update)
+            }).then(function(res) {
+                this.formatDataset(res);
             })
         })
 
     }
+
+    formatDataset(res){
+        let numAngry = res.filter(x => x == 0).length;
+        let numDisgust = res.filter(x => x == 1).length;
+        let numFear = res.filter(x => x == 2).length;
+        let numHappy = res.filter(x => x == 3).length;
+        let numNeutral = res.filter(x => x == 4).length;
+        let numSad = res.filter(x => x == 5).length;
+        let numSurprise = res.filter(x => x == 6).length;
+
+        this.setState({ 
+            dataset: {
+                labels: [
+                    'Angry',
+                    'Disgust',
+                    'Fear',
+                    'Happy',
+                    'Neutral',
+                    'Sad',
+                    'Surprise'
+                ],
+                datasets: [{
+                    data: [numAngry, numDisgust, numFear, numHappy, numNeutral, numSad, numSurprise],
+                    backgroundColor: [
+                        '#DC0A73',
+                        '#F1CAC5',
+                        '#5E4866',
+                        '#C88CEF',
+                        '#B0B5E8',
+                        '#AE9EB3',
+                        '#F57359'
+                    ]
+                }]
+            } 
+        })
+    }
+
+
 
     blobToBase64(blob, callback) {
         const reader = new FileReader()
@@ -115,10 +182,11 @@ class VideoRecorder extends React.Component {
                 >
                     Video stream not available
                 </video>
-                <div>
+                <div className="donut">
                     {!recording && <button onClick={e => this.startRecording(e)}>Record</button>}
                     {recording && <button onClick={e => this.stopRecording(e)}>Stop</button>}
                 </div>
+                <Doughnut data={this.state.dataset}/>
             </div>
         )
     }
