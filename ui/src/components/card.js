@@ -16,19 +16,21 @@ export default class Card extends React.Component {
     render(){
         return (
             <div id="ii" className="card">
-                <div className="card-title">
-                    Session {this.props.data.sessionId}
-                </div>
-                <div className="card-data">
-                    <div>
-                        <ul className="card-list">
-                            <li><strong>Complete by: </strong>{this.props.data.date}</li>
-                            <li><strong>Number of Questions: </strong>{this.props.data.nQuestions}</li>
-                            <li><strong>Estimated Completion Time: </strong>{this.props.data.time}</li>
-                        </ul>
+                <div className="white">
+                    <div className="card-title">
+                        Session {this.props.data.sessionId}
                     </div>
-                    <div>
-                        <Link to={this.getPath()}> <img className="card-icon" src={nextIcon} /></Link>
+                    <div className="card-data">
+                        <div>
+                            <ul className="card-list">
+                                <li><strong>Complete by: </strong>{this.props.data.date}</li>
+                                <li><strong>Number of Questions: </strong>{this.props.data.nQuestions}</li>
+                                <li><strong>Estimated Completion Time: </strong>{this.props.data.time}</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <Link to={this.getPath()}> <img className="card-icon" src={nextIcon} /></Link>
+                        </div>
                     </div>
                 </div>
             </div>
