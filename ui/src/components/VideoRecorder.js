@@ -7,7 +7,8 @@ class VideoRecorder extends React.Component {
 
     /**
      * 
-     * title
+     * title/ session number
+     * question number
      */
     constructor(props) {
         super(props)
@@ -15,6 +16,9 @@ class VideoRecorder extends React.Component {
         this.state = {
             recording: false,
         }
+
+        this.saveVideo = this.saveVideo.bind(this)
+        this.blobToBase64 = this.blobToBase64.bind(this)
     }
 
     async componentDidMount() {
@@ -65,12 +69,22 @@ class VideoRecorder extends React.Component {
         const blob = new Blob(this.chunks, { type: videoType });
         // console.log(blob)
 
-        this.blobToBase64(blob, function(base64) {
-            const update = { 'blob': base64 }
+        var session = this.props.session
+        var question = this.props.question
 
-            fetch('https://127.0.0.1/video', {
+        this.blobToBase64(blob, function(base64) {
+            const update = {
+                'session': session,
+                'question': question,
+                'blob': base64
+            }
+
+            // console.log(update)
+
+            fetch('http://127.0.0.1:5000/video', {
                 method: 'POST',
-                body: update
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(update)
             })
         })
 
@@ -111,3 +125,4 @@ class VideoRecorder extends React.Component {
 }
 
 export default VideoRecorder;
+
