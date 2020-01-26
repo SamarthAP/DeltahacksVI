@@ -82,4 +82,4 @@ def analyze_video():
 
     print(arr)
 
-    return 'thanks'
+    return arr
