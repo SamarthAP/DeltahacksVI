@@ -1,7 +1,18 @@
 import React from 'react';
+import Question from './Question';
 import '../css/Session.css'
 
-class Session extends React.Component {
+var data = [
+    {
+        title: "Question 1",
+        question: "How does heebeejeebees make you feel?"
+    },{
+        title: "Question 2",
+        question: "How does heejeebeejees make you feel?"
+    }
+]
+
+export default class Session extends React.Component {
 
     /**
      * 
@@ -10,16 +21,21 @@ class Session extends React.Component {
      * 
      */
     constructor(props) {
+        super(props);
+    }
 
+    handleData(){
+        return data.map(q =>
+            <Question data={q}/>
+        );
     }
 
     render() {
         return (
-            <div className>
-
+            <div className="sess">
+                {this.handleData()}
             </div>
         )
     }
 }
 
-export default Session;

@@ -42,4 +42,9 @@
     width: auto;
     margin-right: 2em;
     padding-bottom: 50%;
+    opacity: 0.5;
+}
+
+.card-icon:hover {
+    opacity: 1;
 }

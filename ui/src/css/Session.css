@@ -1,3 +1,45 @@
-.Session {
-    
+.q-cn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: darkgrey;
+    border: 1px solid black;
+    padding: 20px;
+    width: 50vw;
+    margin-bottom: 1em;
+}
+
+.q-vid {
+    padding-bottom: 1em;
+}
+
+.q-text {
+    padding-left: 2em;
+}
+
+.q-num {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 24px;
+}
+
+.q-ques {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+}
+
+.cam-icon {
+    height: 50px;
+    width: auto;
+    padding-right: 1em;
+    opacity: 0.5;
+}
+
+.cam-icon:hover {
+    opacity: 1;
 }
