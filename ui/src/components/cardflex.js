@@ -4,22 +4,25 @@ import '../css/card.css';
 
 var cardData = [
     {
-        id: "Session 1",
+        sessionId: 1,
         date: "Jan 31, 2020",
         nQuestions: "10",
         time: "10min"
+        
     },{
-        id: "Session 2",
+        sessionId: 2,
         date: "Feb 1, 2020",
         nQuestions: "2",
         time: "15min"
+
     },{
-        id: "Session 1",
+        sessionId: 3,
         date: "Jan 31, 2020",
         nQuestions: "10",
         time: "10min"
+
     },{
-        id: "Session 1",
+        sessionId: 4,
         date: "Jan 31, 2020",
         nQuestions: "10",
         time: "10min"

@@ -1,27 +1,23 @@
 import React from 'react';
 import '../css/card.css';
+import {Link} from 'react-router-dom';
 
 var nextIcon = require("../assets/play-black.png")
 
 export default class Card extends React.Component {
     constructor(props){
         super(props);
-        this.state = {
-            data: {
-                imgSrc: nextIcon
-            }
-        }
     }
 
-    onButton(sessionId){
-        //DWIP ROUTE THIS BITCH
+    getPath(){
+        return "/sessions/" + this.props.data.sessionId
     }
 
     render(){
         return (
             <div id="ii" className="card">
                 <div className="card-title">
-                    {this.props.data.id}
+                    Session {this.props.data.sessionId}
                 </div>
                 <div className="card-data">
                     <div>
@@ -32,7 +28,7 @@ export default class Card extends React.Component {
                         </ul>
                     </div>
                     <div>
-                        <img onClick={() => this.onButton(this.props.data.id)} className="card-icon" src={this.state.data.imgSrc} />   
+                        <Link to={this.getPath()}> <img className="card-icon" src={nextIcon} /></Link>
                     </div>
                 </div>
             </div>

@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import FrontPage from './components/frontPage';
 import SessionPage from './components/sessionPage';
 
-
 export default class App extends React.Component {
   render () {
     return (

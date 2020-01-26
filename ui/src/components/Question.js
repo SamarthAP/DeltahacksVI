@@ -13,9 +13,9 @@ export default class Question extends React.Component {
 
     startVideo() {
         if(this.state.isVideo){
-            this.setState({ isVideo: false })
+            this.setState({ isVideo: false });
         } else {
-            this.setState({ isVideo: true })
+            this.setState({ isVideo: true });
         }
     }
 
@@ -28,7 +28,7 @@ export default class Question extends React.Component {
             <div className="q-cn">
                 <div className="question">
                     <div className="q-text">
-                        <h1 className="q-num">{this.props.data.title}</h1>
+                        <h1 className="q-num">Question {this.props.data.questionId}</h1>
                         <h1 className="q-ques">{this.props.data.question}</h1>
                     </div>
                     <img onClick={() => this.startVideo()} className="cam-icon" src={camIcon}/>
