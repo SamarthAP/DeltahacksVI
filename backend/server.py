@@ -83,4 +83,4 @@ def analyze_video():
 
     print(arr)
 
-    return json.dumps(arr)
+    return json.dumps([int(i) for i in arr])

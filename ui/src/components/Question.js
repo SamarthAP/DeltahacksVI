@@ -28,7 +28,7 @@ export default class Question extends React.Component {
             <div className="q-cn">
                 <div className="question">
                     <div className="q-text">
-                        <h1 className="q-num">Question {this.props.data.id}</h1>
+                        <h1 className="q-num">Discussion {this.props.data.id}</h1>
                         <h1 className="q-ques">{this.props.data.question}</h1>
                     </div>
                     <img onClick={() => this.startVideo()} className="cam-icon" src={camIcon}/>

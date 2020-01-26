@@ -46,6 +46,7 @@ class VideoRecorder extends React.Component {
 
         this.saveVideo = this.saveVideo.bind(this)
         this.blobToBase64 = this.blobToBase64.bind(this)
+        this.formatDataset = this.formatDataset.bind(this)
     }
 
     async componentDidMount() {
@@ -91,6 +92,7 @@ class VideoRecorder extends React.Component {
         this.saveVideo()
     }
 
+
     saveVideo() {
         // convert saved chunks to blob
         const blob = new Blob(this.chunks, { type: videoType });
@@ -112,14 +114,14 @@ class VideoRecorder extends React.Component {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(update)
-            }).then(function(res) {
-                this.formatDataset(res);
-            })
+            }).then(data => {
+                return data.json()
+            }).then(res => this.formatDataset(res))
         })
 
     }
 
-    formatDataset(res){
+    formatDataset(res) {
         let numAngry = res.filter(x => x == 0).length;
         let numDisgust = res.filter(x => x == 1).length;
         let numFear = res.filter(x => x == 2).length;
