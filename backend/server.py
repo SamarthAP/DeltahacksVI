@@ -2,6 +2,8 @@ from flask import Flask, escape, request
 from flask_cors import CORS
 import json
 
+from firebase import firebase
+
 import numpy as np
 import keras
 from keras.models import load_model
@@ -9,6 +11,8 @@ from keras.preprocessing.image import img_to_array
 import cv2
 
 import base64
+
+firebase = firebase.FirebaseApplication('https://delta6-696c6.firebaseio.com/', None)
 
 app = Flask(__name__)
 CORS(app)
@@ -83,4 +87,12 @@ def analyze_video():
 
     print(arr)
 
-    return json.dumps([int(i) for i in arr])
+    res = firebase.post(
+        '/emotions',
+        {
+            str(request.json['session']) + '-' + str(request.json['question']): [int(i) for i in arr]
+        }
+    )
+
+    # return json.dumps([int(i) for i in arr])
+    return 'thanks'
