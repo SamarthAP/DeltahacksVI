@@ -3,7 +3,7 @@
         {   
             "sessionId": 1,
             "date": "Jan 31, 2020",
-            "nQuestions": "10",
+            "nQuestions": "3",
             "time": "10min",
             "questions": [
                 {
@@ -34,7 +34,7 @@
         },{   
             "sessionId": 3,
             "date": "Jan 31, 2020",
-            "nQuestions": "10",
+            "nQuestions": "4",
             "time": "10min",
             "questions": [
                 {
@@ -54,7 +54,7 @@
         },{   
             "sessionId": 4,
             "date": "Jan 31, 2020",
-            "nQuestions": "10",
+            "nQuestions": "3",
             "time": "10min",
             "questions": [
                 {
